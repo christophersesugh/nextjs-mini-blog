@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Stack, Typography } from "@mui/material";
+import Post from "./post";
 
 const posts = [
   {
@@ -15,15 +16,21 @@ const posts = [
 
 export default function Section({ title = "" }) {
   return (
-    <Paper elevation={1}>
-      <Typography>{title}</Typography>
-      <Grid container>
+    <Paper
+      elevation={1}
+      sx={{
+        padding: "16px",
+        borderRadius: 5,
+        display: "grid",
+        placeItems: "center",
+      }}
+    >
+      <Typography component="h2" variant="h4" sx={{ margin: "8px" }}>
+        {title}
+      </Typography>
+      <Grid container justifyContent="center">
         {posts.map((post) => {
-          return (
-            <Grid item>
-              <h1>{post.name}</h1>
-            </Grid>
-          );
+          return <Post name={post.name} />;
         })}
       </Grid>
     </Paper>

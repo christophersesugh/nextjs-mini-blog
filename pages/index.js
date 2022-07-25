@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import Feed from "../components/feed";
 
 export default function Home() {
-  return <h1>Hello next</h1>;
+  return <Feed />;
 }
