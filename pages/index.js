@@ -1,9 +1,17 @@
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import Feed from "../components/feed";
 
 export default function Home({ posts }) {
-  return <Feed posts={posts} />;
+  return (
+    <>
+      <Head>
+        <title>Mini blog</title>
+      </Head>
+      <Feed posts={posts} />
+    </>
+  );
 }
 
 export async function getServerSideProps() {

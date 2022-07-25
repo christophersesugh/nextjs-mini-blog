@@ -7,8 +7,7 @@ import createEmotionCache from "../utils/createEmotionCache";
 import theme from "../theme/theme";
 import "../styles/globals.css";
 
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Layout from "../components/layout";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -19,11 +18,9 @@ const MyApp = (props) => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Navbar />
-        <Container maxWidth="md">
+        <Layout>
           <Component {...pageProps} />
-        </Container>
-        <Footer />
+        </Layout>
       </ThemeProvider>
     </CacheProvider>
   );
