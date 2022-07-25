@@ -14,8 +14,7 @@ import Post from "./post";
 //   },
 // ];
 
-export default function Section({ title = "", posts }) {
-  console.log(posts);
+export default function Section({ title = "News", posts }) {
   return (
     <Paper
       elevation={1}
@@ -24,7 +23,7 @@ export default function Section({ title = "", posts }) {
         borderRadius: 5,
         display: "grid",
         placeItems: "center",
-        margin: 2,
+        margin: 4,
       }}
     >
       <Typography component="h2" variant="h4" sx={{ margin: "8px" }}>

@@ -3,14 +3,15 @@ import Image from "next/image";
 import Feed from "../components/feed";
 
 export default function Home({ posts }) {
-  const filteredPosts = posts.filter((post) => post.id < Number(11));
-  return <Feed posts={filteredPosts} />;
+  return <Feed posts={posts} />;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts/");
   const posts = await res.json();
   return {
-    props: { posts },
+    props: {
+      posts: posts.slice(0, 10),
+    },
   };
 }
