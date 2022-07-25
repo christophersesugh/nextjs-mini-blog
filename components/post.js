@@ -3,10 +3,9 @@ import { Grid, Paper, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 
 export default function Post({ post }) {
-  console.log(post);
   return (
     <Grid item md={6} justifyContent="center" alignItems="center">
-      <Link href="post/[id]" as={`/post/${post.id}`} prefetch={true} passHref>
+      <Link href="post/[id]" as={`/post/${post.id}`} passHref>
         <Paper
           elevation={3}
           sx={{
