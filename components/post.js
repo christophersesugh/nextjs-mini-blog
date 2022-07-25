@@ -6,7 +6,7 @@ export default function Post({ post }) {
   console.log(post);
   return (
     <Grid item md={6} justifyContent="center" alignItems="center">
-      <Link href="post/[id]" as={`/post/${post.id}`} passHref>
+      <Link href="post/[id]" as={`/post/${post.id}`} prefetch={true} passHref>
         <Paper
           elevation={3}
           sx={{

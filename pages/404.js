@@ -7,10 +7,10 @@ export default function NotFound() {
     <Paper
       sx={{
         margin: "12px",
-        background: "inherit",
         display: "grid",
         placeItems: "center",
         textTransform: "capitalize",
+        minHeight: "80vh",
       }}
     >
       <Typography component="h1" variant="h2">

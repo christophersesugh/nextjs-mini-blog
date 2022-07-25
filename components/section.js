@@ -32,7 +32,7 @@ export default function Section({ title = "", posts }) {
       </Typography>
       <Grid container justifyContent="center">
         {posts.map((post) => {
-          return <Post post={post} />;
+          return <Post key={post.id} post={post} />;
         })}
       </Grid>
     </Paper>
