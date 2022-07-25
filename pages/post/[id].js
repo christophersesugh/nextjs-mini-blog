@@ -1,32 +1,38 @@
 import React from "react";
+import Head from "next/head";
 import { Badge, Button, Paper, Typography } from "@mui/material";
 import Link from "next/link";
 
 export default function Post(post) {
   return (
-    <Paper
-      sx={{
-        margin: "12px",
-        display: "grid",
-        placeItems: "center",
-        textTransform: "capitalize",
-        minHeight: "80vh",
-        padding: 4,
-      }}
-    >
-      <Badge>
-        <Typography variant="h5">{post.id}</Typography>
-      </Badge>
-      <Typography component="h1" variant="h2">
-        {post.title}
-      </Typography>{" "}
-      <Typography component="h6" variant="h6">
-        {post.body}
-      </Typography>
-      <Link href="/">
-        <Button variant="outlined">back to posts</Button>
-      </Link>
-    </Paper>
+    <>
+      <Head>
+        <title>Single post</title>
+      </Head>
+      <Paper
+        sx={{
+          margin: "12px",
+          display: "grid",
+          placeItems: "center",
+          textTransform: "capitalize",
+          minHeight: "80vh",
+          padding: 4,
+        }}
+      >
+        <Badge>
+          <Typography variant="h5">{post.id}</Typography>
+        </Badge>
+        <Typography component="h1" variant="h2">
+          {post.title}
+        </Typography>{" "}
+        <Typography component="h6" variant="h6">
+          {post.body}
+        </Typography>
+        <Link href="/">
+          <Button variant="outlined">back to posts</Button>
+        </Link>
+      </Paper>
+    </>
   );
 }
 
